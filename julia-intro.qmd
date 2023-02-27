@@ -1,5 +1,5 @@
 ---
-title: A glimpse into Julia
+title: A glimpse into `Julia`
 subtitle: camilogarciabotero.github.io/julia-intro
 format: 
   revealjs:
@@ -21,6 +21,7 @@ You can get [`juliaup`](https://github.com/JuliaLang/juliaup) and [Julia](https:
 ``` bash
 curl -fsSL https://install.julialang.org | sh
 ```
+. . .
 
 Or if you are using Windows, simply:
 
@@ -28,14 +29,40 @@ Or if you are using Windows, simply:
 winget install julia -s msstore
 ```
 
+. . .
+
 ::: callout-note
 Juliaup is the almost official cross-platform installer for the Julia programming language. This allows you to install and have multiple Julia versions and change smoothly between them.
 :::
 
+***
 
+Now just type `julia` on the terminal:
+
+```{.bash}
+julia
+```
+
+![Julia initilization prompt](figs/julia-init.png){}
 
 ## The Julia Manifest
 
+- Free and open source
+
+
 ## Oh my Beatiful syntax
 
+Unicode support
+
 ## Managing projects and the Pkg
+
+## A supportive community
+
+## The multiple dispatch paradigm
+
+## Some ecosistems
+
+## Some developer's tools
+-vscode plugin
+-
+
