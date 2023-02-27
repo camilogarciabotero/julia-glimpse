@@ -1,0 +1,41 @@
+---
+title: A glimpse into Julia
+subtitle: camilogarciabotero.github.io/julia-intro
+format: 
+  revealjs:
+    footer: |
+      A glimpse into Julia -- Camilo García-Botero
+    preview-links: auto
+    slide-number: true
+    fig-align: center
+    code-line-numbers: false
+    code-link: true
+    smaller: false
+    highlight-style: ayu
+---
+
+## Getting started with Juliaup
+
+You can get [`juliaup`](https://github.com/JuliaLang/juliaup) and [Julia](https://julialang.org/) on Linux or Mac with:
+
+``` bash
+curl -fsSL https://install.julialang.org | sh
+```
+
+Or if you are using Windows, simply:
+
+``` bash
+winget install julia -s msstore
+```
+
+::: callout-note
+Juliaup is the almost official cross-platform installer for the Julia programming language. This allows you to install and have multiple Julia versions and change smoothly between them.
+:::
+
+
+
+## The Julia Manifest
+
+## Oh my Beatiful syntax
+
+## Managing projects and the Pkg
