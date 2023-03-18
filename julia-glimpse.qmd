@@ -1,6 +1,6 @@
 ---
 title: A glimpse into `Julia`
-subtitle: camilogarciabotero.github.io/julia-glimpse/julia-glimpse.html
+subtitle: Join the slides at https://bit.ly/3FutJvK
 author:
   - name: Camilo García-Botero
     orcid: 0000-0002-0426-7007
@@ -145,7 +145,7 @@ search: map map! mapfoldr mapfoldl mapslices mapreduce asyncmap asyncmap! macroe
 Unicode support and nice operators[^1]:
 
 [^1]:
-    1.  From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
+    From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
 
 ``` julia
 neural_network(x, 𝐕, 𝐰, φ, g) = 𝐰 ⋅ map(𝐯ⱼ -> g(𝐯ⱼ ⋅ φ(x)), 𝐕)
