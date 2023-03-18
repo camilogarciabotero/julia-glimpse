@@ -1,6 +1,6 @@
 ---
 title: A glimpse into `Julia`
-subtitle: camilogarciabotero.github.io/julia-intro/julia-intro.html
+subtitle: camilogarciabotero.github.io/julia-glimpse/julia-glimpse.html
 author:
   - name: Camilo García-Botero
     orcid: 0000-0002-0426-7007
