@@ -20,7 +20,6 @@ format:
     code-link: true
     smaller: false
     highlight-style: ayu
-    # theme: fonts.scss
     code-annotations: select
     engine: jupyter
     cache: refresh
