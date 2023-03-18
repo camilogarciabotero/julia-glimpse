@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+@import url('https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+// fonts
+$font-family-sans-serif: Lato, sans-serif !default;
+$font-family-monospace: "JetBrains Mono", normal !default;
+
+
+// colors
+$body-bg: #fdf6e3 !default;
+$body-color: #657b83 !default;
+$link-color: #268bd2 !default;
+$selection-bg: #d33682 !default;
+
+// headings
+$presentation-heading-font: "Petrona", sans-serif !default;
+
+
+// code blocks
+$code-block-border-color: #93a1a1 !default;
+
+/*-- scss:rules --*/
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}

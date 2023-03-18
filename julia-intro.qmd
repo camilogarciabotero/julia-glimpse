@@ -1,12 +1,13 @@
 ---
 title: A glimpse into `Julia`
-subtitle: camilogarciabotero.github.io/julia-intro
+subtitle: camilogarciabotero.github.io/julia-intro/julia-intro.html
 author:
   - name: Camilo García-Botero
     orcid: 0000-0002-0426-7007
     email: ca.garcia2@uniandes.edu.co
 format: 
   revealjs:
+    theme: theme.scss
     footer: |
       A glimpse into The Julia Language
     standalone: true
@@ -19,14 +20,35 @@ format:
     code-link: true
     smaller: false
     highlight-style: ayu
-    theme: fonts.scss
+    # theme: fonts.scss
     code-annotations: select
+    engine: jupyter
+    cache: refresh
 ---
 
-# The Julia Manifest
+# The Julia Manifest {.smaller}
 
-## 
--   Free and open source
+> It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. To achieve this, Julia builds upon the lineage of mathematical programming languages, but also borrows much from popular dynamic languages, including [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)), [Perl](https://en.wikipedia.org/wiki/Perl_(programming_language)), [Python](https://en.wikipedia.org/wiki/Python_(programming_language)), [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), and [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)).
+
+------------------------------------------------------------------------
+
+::: {.incremental .smaller}
+-   Free and open source ([MIT licensed](https://github.com/JuliaLang/julia/blob/master/LICENSE.md))
+
+-   User-defined types are as fast and compact as built-ins
+
+-   No need to vectorize code; devectorized code is fast
+
+-   Designed for parallelism and distributed computation
+
+-   Lightweight "green" threading ([coroutines](https://en.wikipedia.org/wiki/Coroutine))
+
+-   Unobtrusive yet powerful type system
+
+-   Extensible conversions and promotions many types
+
+-   Support for [Unicode](https://en.wikipedia.org/wiki/Unicode), including but not limited to [UTF-8](https://en.wikipedia.org/wiki/UTF-8)
+:::
 
 # Juliaup
 
@@ -46,7 +68,7 @@ Or if you are using Windows, simply:
 winget install julia -s msstore
 ```
 
-***
+------------------------------------------------------------------------
 
 Now just type `julia` on the terminal:
 
@@ -54,36 +76,41 @@ Now just type `julia` on the terminal:
 
 ![](figs/julia-init.png){fig-align="center"}
 
-
 # The marvelous REPL
 
 ## The REPL modes
 
 An integrated package manager `Pkg.jl`
+
 ``` julia
 julia> ] 
 ```
+
 . . .
 
 And direct access to `bash`
+
 ``` julia
 julia> ;
 ```
+
 . . .
 
 The **help** mode right after hitting `?`
+
 ``` julia
 julia> ?
 ```
 
-***
+------------------------------------------------------------------------
 
-```{.julia}
+``` julia
 help?> map
 ```
-. . . 
 
-```{.julia}
+. . .
+
+``` julia
 help?> map
 search: map map! mapfoldr mapfoldl mapslices mapreduce asyncmap asyncmap! macroexpand @macroexpand @macroexpand1 @atomicswap
 
@@ -114,119 +141,402 @@ search: map map! mapfoldr mapfoldl mapslices mapreduce asyncmap asyncmap! macroe
 
 # Oh my Beautiful syntax
 
-***
+------------------------------------------------------------------------
 
-Unicode support and nice operators:
+Unicode support and nice operators[^1]:
 
+[^1]:
+    1.  From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
 
 ``` julia
-neural_network(x, 𝐕, 𝐰, φ, g) = 𝐰 ⋅ map(𝐯ⱼ -> g(𝐯ⱼ ⋅ φ(x)), 𝐕) # <1>
+neural_network(x, 𝐕, 𝐰, φ, g) = 𝐰 ⋅ map(𝐯ⱼ -> g(𝐯ⱼ ⋅ φ(x)), 𝐕)
 ```
-1. From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+R:
+
+```{r}
+#| echo: true
+sqrt(9)
+```
+
+![](figs/prev-twisted.jpeg){fig-align="center"}
+:::
+
+::: {.column .incremental width="50%"}
+Julia:
+
+```{julia}
+#| echo: true
+√9
+```
+
+![](figs/twisted.jpeg){fig-align="center" width="474" height="355"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+```{r}
+#| eval: false
+mx <- matrix(
+    c(23, 58, 98, 54, 68, 74),
+    nrow = 2,
+    ncol = 3,
+    byrow = FALSE,
+    dimnames = list(
+        rows = c("rw1", "rw2"),
+        cols = c("cl1", "cl2", "cl3")
+    )
+)
+
+mx
+```
 
 # Managing Projects
-the Manifest.toml and the Project.toml
+
+The Project.toml and Manifest.toml
+
+------------------------------------------------------------------------
+
+Project.toml
+
+```         
+name = "GeneFinder"
+uuid = "2bc6ee46-2158-4f5a-a720-91cb2d7cee64"
+authors = ["Camilo García"]
+version = "0.0.12"
+
+[deps]
+BioSequences = "7e6ae17a-c86d-528c-b3b9-7f778a29fe59"
+BioSymbols = "3c28c6f8-a34d-59c4-9654-267d177fcfa9"
+FASTX = "c2308a5c-f048-11e8-3e8a-31650f418d12"
+GenomicFeatures = "899a7d2d-5c61-547b-bef9-6698a8d05446"
+IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
+TestItemRunner = "f8b46487-2199-4994-9208-9a1283c18c0a"
+TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
+
+[compat]
+BioSequences = "3"
+BioSymbols = "5"
+FASTX = "2"
+GenomicFeatures = "2"
+IterTools = "1.4"
+TestItemRunner = "0.2"
+TestItems = "0.1"
+julia = "1.8.0"
+
+[extras]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
+```
+
+------------------------------------------------------------------------
+
+Manifest.toml
+
+```         
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.9.0-beta3"
+manifest_format = "2.0"
+project_hash = "d7e8e483246564e1b32e0aa41735942a5def23eb"
+
+[[deps.Artifacts]]
+uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+
+[[deps.Automa]]
+deps = ["Printf", "ScanByte", "TranscodingStreams"]
+git-tree-sha1 = "d50976f217489ce799e366d9561d56a98a30d7fe"
+uuid = "67c07d97-cdcb-5c2c-af73-a7f9c32a568b"
+version = "0.8.2"
+
+[[deps.Base64]]
+uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+
+[[deps.BioGenerics]]
+deps = ["TranscodingStreams"]
+git-tree-sha1 = "0b581906418b93231d391b5dd78831fdc2da0c82"
+uuid = "47718e42-2ac5-11e9-14af-e5595289c2ea"
+version = "0.1.2"
+```
+
+------------------------------------------------------------------------
 
 # The Multiple Dispatch
-a comparison with python 
-a julia function
-a more elaborated julia function with types
-a different method using other types
 
+------------------------------------------------------------------------
+
+A Julia function could be created as simple as:
+
+```{julia}
+#| label: first-func
+#| include: true
+#| echo: true
+f(x) = x^2
+f(2)
+```
+
+. . .
+
+We can use the types to help the compiler infer the function:
+
+```{julia}
+#| label: second-func
+#| include: true
+#| echo: true
+f(x::Int64) = x^2
+f(4)
+```
+
+. . .
+
+But what if I want to use the funciton for floats?
+
+```{julia}
+#| label: third-func
+#| include: true
+#| echo: true
+f(x::Float64) = x^2
+f(2.3)
+```
+
+------------------------------------------------------------------------
+
+```{julia}
+#| label: methods
+#| include: true
+#| echo: true
+methods(f)
+```
 
 # A Feature Rich Language
 
-## Some Random feaures
+## Some Random features
 
-Ternary operators:
+The if-elseif-else syntax,
 
-if-elseif-else syntax,
-
-```{.julia}
-a ? b : c
+```{julia}
+#| eval: false
+#| echo: true
+if x == true
+    "great"
+else
+    "boo"
+end
 ```
 
-## Macros (metaprogrmming: code that transforms code)
+Or, better... Ternary operators:
 
-```{.julia}
-@time
+. . .
+
+```{julia}
+#| label: ternary-func
+#| eval: false
+#| echo: true
+x ? "great" : "boo"
 ```
 
-```{.julia}
-@show
+## Macros 
+
+(metaprogrmming: code that transforms code)
+
+``` julia
+@time f(10^6)
 ```
 
-```{.julia}
-@which
+## Fine-grain debugging[^2]
+
+[^2]: This example was taken from [What\'s great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
+
+Return Julia's intermediate representation (IR) of the function:
+
+``` julia
+@code_lowered 
 ```
 
+. . .
 
-## Fine-grain debugging
-return Julia's intermediate representation (IR) of the function's content
+Reports Julia's type inference on the IR
 
-```{.julia}
-@code_lowered
-```
-reports Julia's type inference on the IR
-
-```{.julia}
+``` julia
 @code_typed 
 ```
 
+. . .
+
+Shows the LLVM IR generated by Julia
+
+``` julia
 @code_llvm 
-optimize=false shows the LLVM IR generated by Julia, shows the optimised LLVM
+```
 
+. . .
+
+Show the native assembly function code
+
+``` julia
 @code_native
-shows the native assembly of the function
+```
 
-## Out-of-the-box parallelism
-@simd
-@thread
+## Out-of-the-box parallelism[^3]
+
+[^3]: Taken from [What's great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
+
+```{julia}
+#| echo: true
+#| include: true
+using Base.Threads
+@threads for i in 1:16
+    print(i, ',') # IO is thread-safe
+end
+```
 
 # A Rich Ecosystem
 
-##
+------------------------------------------------------------------------
 
-![](figs/julia-packages-ci.png)
+[![The Nanosoldier Report](figs/julia-packages-ci.png)](https://github.com/JuliaCI/NanosoldierReports)
 
 ## Differential Equations
 
-## Data Science
+```{julia}
+#| include: true
+#| echo: true
+#| eval: false
+function lorenz!(du,u,p,t)
+ du[1] = 10.0*(u[2]-u[1])
+ du[2] = u[1]*(28.0-u[3]) - u[2]
+ du[3] = u[1]*u[2] - (8/3)*u[3]
+end
+```
 
-DataFrames and Tidier.jl
+```         
+lorenz! (generic function with 1 method)
+```
 
-## Plotting libraries
+------------------------------------------------------------------------
 
-## Biology
+Now let's solved:
+
+```{julia}
+#| eval: false
+#| echo: true
+using DifferentialEquations
+u0 = [1.0;0.0;0.0]
+tspan = (0.0,100.0)
+prob = ODEProblem(lorenz!,u0,tspan)
+sol = solve(prob)
+```
+
+```         
+retcode: Success
+Interpolation: specialized 4th order "free" interpolation, specialized 2nd order "free" stiffness-aware interpolation
+t: 1263-element Vector{Float64}:
+   0.0
+   3.5678604836301404e-5
+   0.0003924646531993154
+   0.0032624077544510573
+   0.009058075635317072
+   0.01695646895607931
+   0.02768995855685593
+   0.04185635042021763
+   0.06024041165841079
+   0.08368541255159562
+   ⋮
+  99.30760258626904
+  99.39665422328268
+  99.49536147459878
+  99.58822928767293
+  99.68983993598462
+  99.77864535713971
+  99.85744078539504
+  99.93773320913628
+ 100.0
+u: 1263-element Vector{Vector{Float64}}:
+ [1.0, 0.0, 0.0]
+ [0.9996434557625105, 0.0009988049817849058, 1.781434788799208e-8]
+ [0.9961045497425811, 0.010965399721242457, 2.146955365838907e-6]
+ [0.9693591634199452, 0.08977060667778931, 0.0001438018342266937]
+ [0.9242043615038835, 0.24228912482984957, 0.0010461623302512404]
+ [0.8800455868998046, 0.43873645009348244, 0.0034242593451028745]
+ [0.8483309847495312, 0.6915629321083602, 0.008487624590227805]
+ [0.8495036669651213, 1.0145426355349096, 0.01821208962127994]
+ [0.9139069574560097, 1.4425599806525806, 0.03669382197085303]
+ [1.088863826836895, 2.052326595543049, 0.0740257368585531]
+ ⋮
+ [4.669609096878053, 3.061564434452441, 25.1424735017959]
+ [4.188801916573263, 4.617474401440693, 21.09864175382292]
+ [5.559603854699961, 7.905631612648314, 18.79323210016923]
+ [8.556629716266505, 12.533041060088328, 20.6623639692711]
+ [12.280585075547771, 14.505154761545633, 29.332088452699942]
+ [11.736883151600804, 8.279294641640229, 34.68007510231878]
+ [8.10973327066804, 3.2495066495235854, 31.97052076740117]
+ [4.958629886040755, 2.194919965065022, 26.948439650907677]
+ [3.8020065515435855, 2.787021797920187, 23.420567509786622]
+```
+
+------------------------------------------------------------------------
+
+![The Lorenz attractor](figs/lorenz.png){fig-align="center" width="700"}
+
+<!--  ## Data Science -->
+
+<!-- ## Plotting libraries -->
+
+<!-- ## Biology -->
 
 # And many others...
 
-GPU
-QuantumComputing
-ML
-AD
-Genie (web apps)
-Pluto notebooks
+-   [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) and [Tidier.jl](https://github.com/kdpsingh/Tidier.jl)
+-   [Makie.jl](https://github.com/MakieOrg/Makie.jl)
+-   [BioSequences.jl](https://github.com/BioJulia/BioSequences.jl) (and the entire [BioJulia](https://github.com/BioJulia) ecosystem)
+-   [SciML](https://github.com/SciML)
+-   [Genie.jl](https://github.com/GenieFramework/Genie.jl) (web apps)
+-   [Pluto.jl](https://github.com/fonsp/Pluto.jl) (interactive notebooks)
 
-# Some developer's tools
+<!-- # Some developer's tools -->
 
-## Vscode plugin
+<!-- ## Vscode plugin -->
 
-## Creating a package
+<!-- ## Creating a package -->
 
-## Documentation
-docstrings
+<!-- ## Documentation -->
 
-## Testing
+<!-- docstrings -->
+
+<!-- ## Testing -->
 
 # A Supportive Community
 
 ## A short story...
 
+![](figs/vshah-slack.png)
 
+------------------------------------------------------------------------
+
+![](figs/Jlsyntax.png){fig-align="center"}
+
+![](figs/Jlsyntax.png)
+
+------------------------------------------------------------------------
+
+![](figs/last-jlsyntax.png){fig-align="center"}
 
 ## Other talks
 
-https://github.com/johnfgibson/whyjulia
+This talk was heavily influenced by [What's great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen), and [Why Julia?](https://github.com/johnfgibson/whyjulia) presentation as well. I also recommend this Discourse thread about Why is [Julia so great?](https://discourse.julialang.org/t/why-is-julia-so-great/94718) that summarizes many other talks and resources.
 
-https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic
+## Join the community!
+
+[Discourse](https://discourse.julialang.org)
+
+[Slack](https://julialang.org/slack/)
+
+[Julia on Github](https://github.com/JuliaLang/julia)

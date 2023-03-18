@@ -7,17 +7,17 @@
 <link href="julia-intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="julia-intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="julia-intro_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="julia-intro_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.262">
-
-  <meta name="author" content="Camilo García-Botero">
-  <title>A glimpse into Julia</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/reveal.css">
-  <style>
+<link href="julia-intro_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.272">
+<meta name="author" content="Camilo García-Botero">
+<title>A glimpse into Julia</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +95,12 @@
     code span.vs { color: #86b300; } /* VerbatimString */
     code span.wa { color: #f07171; } /* Warning */
   </style>
-  <link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link href="julia-intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="julia-intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="julia-intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="julia-intro_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="julia-intro_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+<link href="julia-intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="julia-intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="julia-intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="julia-intro_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -297,7 +297,7 @@
   }
 
   </style>
-  <style type="text/css">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -389,9 +389,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">A glimpse into <code>Julia</code></h1>
-  <p class="subtitle">camilogarciabotero.github.io/julia-intro</p>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">A glimpse into <code>Julia</code>
+</h1>
+  <p class="subtitle">camilogarciabotero.github.io/julia-intro/julia-intro.html</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,50 +404,41 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
 </div>
 </div>
 
-</section>
-<section>
-<section id="the-julia-manifest" class="title-slide slide level1 center">
-<h1>The Julia Manifest</h1>
-
-</section>
-<section id="section" class="slide level2 center">
-<h2></h2>
+</section><section><section id="the-julia-manifest" class="title-slide slide level1 smaller center"><h1>The Julia Manifest</h1>
+<blockquote>
+<p>It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. To achieve this, Julia builds upon the lineage of mathematical programming languages, but also borrows much from popular dynamic languages, including&nbsp;<a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>,&nbsp;<a href="https://en.wikipedia.org/wiki/Perl_(programming_language)">Perl</a>,&nbsp;<a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>,&nbsp;<a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a>, and&nbsp;<a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>.</p>
+</blockquote>
+</section><section class="slide level2 center"><div class="smaller">
 <ul>
-<li>Free and open source</li>
+<li class="fragment"><p>Free and open source (<a href="https://github.com/JuliaLang/julia/blob/master/LICENSE.md">MIT licensed</a>)</p></li>
+<li class="fragment"><p>User-defined types are as fast and compact as built-ins</p></li>
+<li class="fragment"><p>No need to vectorize code; devectorized code is fast</p></li>
+<li class="fragment"><p>Designed for parallelism and distributed computation</p></li>
+<li class="fragment"><p>Lightweight “green” threading (<a href="https://en.wikipedia.org/wiki/Coroutine">coroutines</a>)</p></li>
+<li class="fragment"><p>Unobtrusive yet powerful type system</p></li>
+<li class="fragment"><p>Extensible conversions and promotions many types</p></li>
+<li class="fragment"><p>Support for&nbsp;<a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a>, including but not limited to&nbsp;<a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a></p></li>
 </ul>
-</section></section>
-<section>
-<section id="juliaup" class="title-slide slide level1 center">
-<h1>Juliaup</h1>
+</div>
+</section></section><section><section id="juliaup" class="title-slide slide level1 center"><h1>Juliaup</h1>
 
-</section>
-<section id="the-julia-version-manager" class="slide level2 center">
-<h2>The Julia version manager</h2>
+</section><section id="the-julia-version-manager" class="slide level2 center"><h2>The Julia version manager</h2>
 <p>You can get <a href="https://github.com/JuliaLang/juliaup"><code>Juliaup</code></a> and <a href="https://julialang.org/">Julia</a> on Linux or MacOS with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://install.julialang.org <span class="kw">|</span> <span class="fu">sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>Or if you are using Windows, simply:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> install julia <span class="at">-s</span> msstore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section class="slide level2 center">
-
-<p>Now just type <code>julia</code> on the terminal:</p>
+</section><section class="slide level2 center"><p>Now just type <code>julia</code> on the terminal:</p>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figs/julia-init.png" class="quarto-discovered-preview-image"></p>
+<figure><p><img data-src="figs/julia-init.png" class="quarto-discovered-preview-image"></p>
 </figure>
 </div>
 </div>
-</section></section>
-<section>
-<section id="the-marvelous-repl" class="title-slide slide level1 center">
-<h1>The marvelous REPL</h1>
+</section></section><section><section id="the-marvelous-repl" class="title-slide slide level1 center"><h1>The marvelous REPL</h1>
 
-</section>
-<section id="the-repl-modes" class="slide level2 center">
-<h2>The REPL modes</h2>
+</section><section id="the-repl-modes" class="slide level2 center"><h2>The REPL modes</h2>
 <p>An integrated package manager <code>Pkg.jl</code></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> ] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
@@ -458,10 +449,7 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
 <p>The <strong>help</strong> mode right after hitting <code>?</code></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> ?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section class="slide level2 center">
-
-<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>help?<span class="op">&gt;</span> map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section class="slide level2 center"><div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>help?<span class="op">&gt;</span> map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>help?<span class="op">&gt;</span> map</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>search<span class="op">:</span> map map! mapfoldr mapfoldl mapslices mapreduce asyncmap asyncmap! macroexpand <span class="pp">@macroexpand</span> <span class="pp">@macroexpand1</span> <span class="pp">@atomicswap</span></span>
@@ -490,122 +478,303 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>   <span class="fl">33</span></span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
-<section>
-<section id="oh-my-beautiful-syntax" class="title-slide slide level1 center">
-<h1>Oh my Beautiful syntax</h1>
+</section></section><section><section id="oh-my-beautiful-syntax" class="title-slide slide level1 center"><h1>Oh my Beautiful syntax</h1>
 
-</section>
-<section class="slide level2 center">
+</section><section class="slide level2 center"><p>Unicode support and nice operators<sup>1</sup>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">neural_network</span>(x, 𝐕, 𝐰, <span class="cn">φ</span>, g) <span class="op">=</span> 𝐰 <span class="op">⋅</span> <span class="fu">map</span>(𝐯ⱼ <span class="op">-&gt;</span> <span class="fu">g</span>(𝐯ⱼ <span class="op">⋅</span> <span class="fu">φ</span>(x)), 𝐕)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside><ol class="aside-footnotes"><li id="fn1">
+<ol type="1">
+<li>From the <a href="https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl">Beautiful Algorithms</a> project</li>
+</ol>
 
-<p>Unicode support and nice operators:</p>
-<div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode julia code-annotation-code code-with-copy code-annotated"><code class="sourceCode julia"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">neural_network</span>(x, 𝐕, 𝐰, <span class="cn">φ</span>, g) <span class="op">=</span> 𝐰 <span class="op">⋅</span> <span class="fu">map</span>(𝐯ⱼ <span class="op">-&gt;</span> <span class="fu">g</span>(𝐯ⱼ <span class="op">⋅</span> <span class="fu">φ</span>(x)), 𝐕)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-8">From the <a href="https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl">Beautiful Algorithms</a> project</span>
-</dd>
-</dl>
-</section></section>
-<section id="managing-projects" class="title-slide slide level1 center">
-<h1>Managing Projects</h1>
-<p>the Manifest.toml and the Project.toml</p>
-</section>
+</li></ol></aside></section><section class="slide level2 center"><div class="columns">
+<div class="column" style="width:50%;">
+<p>R:</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-1_b38762f6fbfb62ac9fc99d731188d1e3">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="figs/prev-twisted.jpeg"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Julia:</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-2_26d3a9328eaa01b19c7a6511b62a648b">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>√<span class="fl">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.0</code></pre>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="figs/twisted.jpeg" width="474" height="355"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section class="slide level2 center"></section></section><section><section id="managing-projects" class="title-slide slide level1 center"><h1>Managing Projects</h1>
+<p>The Project.toml and Manifest.toml</p>
+</section><section class="slide level2 center"><p>Project.toml</p>
+<pre><code>name = "GeneFinder"
+uuid = "2bc6ee46-2158-4f5a-a720-91cb2d7cee64"
+authors = ["Camilo García"]
+version = "0.0.12"
 
-<section id="the-multiple-dispatch" class="title-slide slide level1 center">
-<h1>The Multiple Dispatch</h1>
-<p>a comparison with python a julia function a more elaborated julia function with types a different method using other types</p>
-</section>
+[deps]
+BioSequences = "7e6ae17a-c86d-528c-b3b9-7f778a29fe59"
+BioSymbols = "3c28c6f8-a34d-59c4-9654-267d177fcfa9"
+FASTX = "c2308a5c-f048-11e8-3e8a-31650f418d12"
+GenomicFeatures = "899a7d2d-5c61-547b-bef9-6698a8d05446"
+IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
+TestItemRunner = "f8b46487-2199-4994-9208-9a1283c18c0a"
+TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
 
-<section>
-<section id="a-feature-rich-language" class="title-slide slide level1 center">
-<h1>A Feature Rich Language</h1>
+[compat]
+BioSequences = "3"
+BioSymbols = "5"
+FASTX = "2"
+GenomicFeatures = "2"
+IterTools = "1.4"
+TestItemRunner = "0.2"
+TestItems = "0.1"
+julia = "1.8.0"
 
-</section>
-<section id="macros-metaprogrmming-code-that-transforms-code" class="slide level2 center">
-<h2>Macros (metaprogrmming: code that transforms code)</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@time</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@which</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="fine-grain-debugging" class="slide level2 center">
-<h2>Fine-grain debugging</h2>
-<p>return Julia’s intermediate representation (IR) of the function’s content</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_lowered</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>reports Julia’s type inference on the IR</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_typed</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="citation" data-cites="code_llvm">@code_llvm</span> optimize=false shows the LLVM IR generated by Julia, shows the optimised LLVM</p>
-<p><span class="citation" data-cites="code_native">@code_native</span> shows the native assembly of the function</p>
-</section>
-<section id="out-of-the-box-parallelism" class="slide level2 center">
-<h2>Out-of-the-box parallelism</h2>
-<p><span class="citation" data-cites="simd">@simd</span> <span class="citation" data-cites="thread">@thread</span></p>
-</section></section>
-<section>
-<section id="a-rich-ecosystem" class="title-slide slide level1 center">
-<h1>A Rich Ecosystem</h1>
+[extras]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
-</section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
+[targets]
+test = ["Test"]</code></pre>
+</section><section class="slide level2 center"><p>Manifest.toml</p>
+<pre><code># This file is machine-generated - editing it directly is not advised
 
-<img data-src="figs/julia-packages-ci.png" class="r-stretch"></section>
-<section id="differential-equations" class="slide level2 center">
-<h2>Differential Equations</h2>
-</section>
-<section id="data-science" class="slide level2 center">
-<h2>Data Science</h2>
-<p>DataFrames and Tidier.jl</p>
-</section>
-<section id="biology" class="slide level2 center">
-<h2>Biology</h2>
-</section></section>
-<section>
-<section id="some-developers-tools" class="title-slide slide level1 center">
-<h1>Some developer’s tools</h1>
+julia_version = "1.9.0-beta3"
+manifest_format = "2.0"
+project_hash = "d7e8e483246564e1b32e0aa41735942a5def23eb"
 
-</section>
-<section id="vscode-plugin" class="slide level2 center">
-<h2>Vscode plugin</h2>
-</section>
-<section id="creating-a-package" class="slide level2 center">
-<h2>Creating a package</h2>
-</section></section>
-<section>
-<section id="a-supportive-community" class="title-slide slide level1 center">
-<h1>A Supportive Community</h1>
+[[deps.Artifacts]]
+uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 
-</section>
-<section id="a-short-story" class="slide level2 center">
-<h2>A short story…</h2>
-</section>
-<section id="other-talks" class="slide level2 center">
-<h2>Other talks</h2>
-<p>https://github.com/johnfgibson/whyjulia</p>
+[[deps.Automa]]
+deps = ["Printf", "ScanByte", "TranscodingStreams"]
+git-tree-sha1 = "d50976f217489ce799e366d9561d56a98a30d7fe"
+uuid = "67c07d97-cdcb-5c2c-af73-a7f9c32a568b"
+version = "0.8.2"
+
+[[deps.Base64]]
+uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+
+[[deps.BioGenerics]]
+deps = ["TranscodingStreams"]
+git-tree-sha1 = "0b581906418b93231d391b5dd78831fdc2da0c82"
+uuid = "47718e42-2ac5-11e9-14af-e5595289c2ea"
+version = "0.1.2"</code></pre>
+</section><section class="slide level2 center"></section></section><section><section id="the-multiple-dispatch" class="title-slide slide level1 center"><h1>The Multiple Dispatch</h1>
+
+</section><section class="slide level2 center"><p>A Julia function could be created as simple as:</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/first-func_d900681347a4cc359a3d839a8fd25614">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x) <span class="op">=</span> x<span class="op">^</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f (generic function with 1 method)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>We can use the types to help the compiler infer the function:</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/second-func_545b24d1fa096882b4466957b8591f10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x<span class="op">::</span><span class="dt">Int64</span>) <span class="op">=</span> x<span class="op">^</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f (generic function with 2 methods)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="fl">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>16</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>But what if I want to use the funciton for floats?</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/third-func_887ea0aff66c7d63039ecf7c0b277b64">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x<span class="op">::</span><span class="dt">Float64</span>) <span class="op">=</span> x<span class="op">^</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f (generic function with 3 methods)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="fl">2.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.289999999999999</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level2 center"><div class="cell" data-hash="julia-intro_cache/revealjs/methods_20710538095f79a0f9fa5c0672c91650">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">methods</span>(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># 3 methods for generic function "f" from Main:
+ [1] f(x::Int64)
+     @ none:3
+ [2] f(x::Float64)
+     @ none:3
+ [3] f(x)
+     @ none:3</code></pre>
+</div>
+</div>
+</section></section><section><section id="a-feature-rich-language" class="title-slide slide level1 center"><h1>A Feature Rich Language</h1>
+
+</section><section id="some-random-features" class="slide level2 center"><h2>Some Random features</h2>
+<p>The if-elseif-else syntax,</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-8_e5c24ba5037c48d1bbee4e65aa772991">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> <span class="cn">true</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"great"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"boo"</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or, better… Ternary operators:</p>
+<div class="fragment">
+<div class="cell" data-hash="julia-intro_cache/revealjs/ternary-func_b9e0dcaf50633d67e7ee762363fe9ece">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x ? <span class="st">"great"</span> <span class="op">:</span> <span class="st">"boo"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="macros" class="slide level2 center"><h2>Macros</h2>
+<p>(metaprogrmming: code that transforms code)</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@time</span> <span class="fu">f</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="fine-grain-debugging2" class="slide level2 center"><h2>Fine-grain debugging<sup>1</sup>
+</h2>
+<p>Return Julia’s intermediate representation (IR) of the function:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_lowered</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Reports Julia’s type inference on the IR</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_typed</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Shows the LLVM IR generated by Julia</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_llvm</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Show the native assembly function code</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@code_native</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>This example was taken from&nbsp;<a href="https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic">What's great about Julia</a>&nbsp;from&nbsp;<a href="https://github.com/jakobnissen">Jakob Nybo</a></p></li></ol></aside></section><section id="out-of-the-box-parallelism3" class="slide level2 center"><h2>Out-of-the-box parallelism<sup>1</sup>
+</h2>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-10_36ab74f121a267816fa1f823058971f1">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Base.Threads</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@threads</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">16</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i, <span class="ch">','</span>) <span class="co"># IO is thread-safe</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,</code></pre>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Taken from <a href="https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic">What’s great about Julia</a> from <a href="https://github.com/jakobnissen">Jakob Nybo</a></p></li></ol></aside></section></section><section><section id="a-rich-ecosystem" class="title-slide slide level1 center"><h1>A Rich Ecosystem</h1>
+
+</section><section class="slide level2 center">
+<img data-src="figs/julia-packages-ci.png" class="r-stretch quarto-figure-center"><p class="caption">The Nanosoldier Report</p></section><section id="differential-equations" class="slide level2 center"><h2>Differential Equations</h2>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-11_259ebfe4f5ae2a458978cb31b91232c2">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">lorenz!</span>(du,u,p,t)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a> du[<span class="fl">1</span>] <span class="op">=</span> <span class="fl">10.0</span><span class="fu">*</span>(u[<span class="fl">2</span>]<span class="op">-</span>u[<span class="fl">1</span>])</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a> du[<span class="fl">2</span>] <span class="op">=</span> u[<span class="fl">1</span>]<span class="fu">*</span>(<span class="fl">28.0</span><span class="op">-</span>u[<span class="fl">3</span>]) <span class="op">-</span> u[<span class="fl">2</span>]</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a> du[<span class="fl">3</span>] <span class="op">=</span> u[<span class="fl">1</span>]<span class="op">*</span>u[<span class="fl">2</span>] <span class="op">-</span> (<span class="fl">8</span><span class="op">/</span><span class="fl">3</span>)<span class="op">*</span>u[<span class="fl">3</span>]</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>lorenz! (generic function with 1 method)</code></pre>
+</section><section class="slide level2 center"><p>Now let’s solved:</p>
+<div class="cell" data-hash="julia-intro_cache/revealjs/unnamed-chunk-12_d34ca8a98d43f880529c7c36e8b70ae2">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DifferentialEquations</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>u0 <span class="op">=</span> [<span class="fl">1.0</span>;<span class="fl">0.0</span>;<span class="fl">0.0</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0.0</span>,<span class="fl">100.0</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(lorenz!,u0,tspan)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>retcode: Success
+Interpolation: specialized 4th order "free" interpolation, specialized 2nd order "free" stiffness-aware interpolation
+t: 1263-element Vector{Float64}:
+   0.0
+   3.5678604836301404e-5
+   0.0003924646531993154
+   0.0032624077544510573
+   0.009058075635317072
+   0.01695646895607931
+   0.02768995855685593
+   0.04185635042021763
+   0.06024041165841079
+   0.08368541255159562
+   ⋮
+  99.30760258626904
+  99.39665422328268
+  99.49536147459878
+  99.58822928767293
+  99.68983993598462
+  99.77864535713971
+  99.85744078539504
+  99.93773320913628
+ 100.0
+u: 1263-element Vector{Vector{Float64}}:
+ [1.0, 0.0, 0.0]
+ [0.9996434557625105, 0.0009988049817849058, 1.781434788799208e-8]
+ [0.9961045497425811, 0.010965399721242457, 2.146955365838907e-6]
+ [0.9693591634199452, 0.08977060667778931, 0.0001438018342266937]
+ [0.9242043615038835, 0.24228912482984957, 0.0010461623302512404]
+ [0.8800455868998046, 0.43873645009348244, 0.0034242593451028745]
+ [0.8483309847495312, 0.6915629321083602, 0.008487624590227805]
+ [0.8495036669651213, 1.0145426355349096, 0.01821208962127994]
+ [0.9139069574560097, 1.4425599806525806, 0.03669382197085303]
+ [1.088863826836895, 2.052326595543049, 0.0740257368585531]
+ ⋮
+ [4.669609096878053, 3.061564434452441, 25.1424735017959]
+ [4.188801916573263, 4.617474401440693, 21.09864175382292]
+ [5.559603854699961, 7.905631612648314, 18.79323210016923]
+ [8.556629716266505, 12.533041060088328, 20.6623639692711]
+ [12.280585075547771, 14.505154761545633, 29.332088452699942]
+ [11.736883151600804, 8.279294641640229, 34.68007510231878]
+ [8.10973327066804, 3.2495066495235854, 31.97052076740117]
+ [4.958629886040755, 2.194919965065022, 26.948439650907677]
+ [3.8020065515435855, 2.787021797920187, 23.420567509786622]</code></pre>
+</section><section class="slide level2 center">
+<!--  ## Data Science -->
+<!-- ## Plotting libraries -->
+<!-- ## Biology -->
+<img data-src="figs/lorenz.png" width="700" class="r-stretch quarto-figure-center"><p class="caption">The Lorenz attractor</p></section></section><section id="and-many-others" class="title-slide slide level1 center"><h1>And many others…</h1>
+<ul>
+<li>
+<a href="https://github.com/JuliaData/DataFrames.jl">DataFrames.jl</a> and <a href="https://github.com/kdpsingh/Tidier.jl">Tidier.jl</a>
+</li>
+<li><a href="https://github.com/MakieOrg/Makie.jl">Makie.jl</a></li>
+<li>
+<a href="https://github.com/BioJulia/BioSequences.jl">BioSequences.jl</a> (and the entire <a href="https://github.com/BioJulia">BioJulia</a> ecosystem)</li>
+<li><a href="https://github.com/SciML">SciML</a></li>
+<li>
+<a href="https://github.com/GenieFramework/Genie.jl">Genie.jl</a> (web apps)</li>
+<li>
+<a href="https://github.com/fonsp/Pluto.jl">Pluto.jl</a> (interactive notebooks)</li>
+</ul>
+<!-- # Some developer's tools --><!-- ## Vscode plugin --><!-- ## Creating a package --><!-- ## Documentation --><!-- docstrings --><!-- ## Testing --></section><section><section id="a-supportive-community" class="title-slide slide level1 center"><h1>A Supportive Community</h1>
+
+</section><section id="a-short-story" class="slide level2 center"><h2>A short story…</h2>
+
+<img data-src="figs/vshah-slack.png" class="r-stretch"></section><section class="slide level2 center"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="figs/Jlsyntax.png"></p>
+</figure>
+</div>
+<p><img data-src="figs/Jlsyntax.png"></p>
+</section><section class="slide level2 center">
+<img data-src="figs/last-jlsyntax.png" class="r-stretch quarto-figure-center"></section><section id="other-talks" class="slide level2 center"><h2>Other talks</h2>
+<p>This talk was heavily influenced by <a href="https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic">What’s great about Julia</a> from <a href="https://github.com/jakobnissen">Jakob Nybo</a>, and <a href="https://github.com/johnfgibson/whyjulia">Why Julia?</a> presentation as well. I also recommend this Discourse thread about Why is <a href="https://discourse.julialang.org/t/why-is-julia-so-great/94718">Julia so great?</a> that summarizes many other talks and resources.</p>
+</section><section id="join-the-community" class="slide level2 center"><h2>Join the community!</h2>
+<p><a href="https://discourse.julialang.org">Discourse</a></p>
+<p><a href="https://julialang.org/slack/">Slack</a></p>
+<p><a href="https://github.com/JuliaLang/julia">Julia on Github</a></p>
 <div class="footer footer-default">
 <p>A glimpse into The Julia Language</p>
 </div>
 </section></section>
-    </div>
+</div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="julia-intro_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="julia-intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="julia-intro_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="julia-intro_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="julia-intro_files/libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="julia-intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="julia-intro_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="julia-intro_files/libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="julia-intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="julia-intro_files/libs/revealjs/plugin/quarto-support/support.js"></script><script src="julia-intro_files/libs/revealjs/plugin/notes/notes.js"></script><script src="julia-intro_files/libs/revealjs/plugin/search/search.js"></script><script src="julia-intro_files/libs/revealjs/plugin/zoom/zoom.js"></script><script src="julia-intro_files/libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -796,8 +965,42 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
           RevealZoom
         ]
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1096,6 +1299,6 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
       }
     });
     </script>
-    
+
 
 </body></html>
