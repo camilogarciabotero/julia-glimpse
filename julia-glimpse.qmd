@@ -144,11 +144,10 @@ search: map map! mapfoldr mapfoldl mapslices mapreduce asyncmap asyncmap! macroe
 
 Unicode support and nice operators[^1]:
 
-[^1]:
-    From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
+[^1]: From the [Beautiful Algorithms](https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl) project
 
 ``` julia
-neural_network(x, 𝐕, 𝐰, φ, g) = 𝐰 ⋅ map(𝐯ⱼ -> g(𝐯ⱼ ⋅ φ(x)), 𝐕)
+neuralnetwork(x, 𝐕, 𝐰, φ, g) = 𝐰 ⋅ map(𝐯ⱼ -> g(𝐯ⱼ ⋅ φ(x)), 𝐕)
 ```
 
 ------------------------------------------------------------------------
@@ -317,9 +316,9 @@ methods(f)
 
 # A Feature Rich Language
 
-## Some Random features
+## Ternary operators
 
-The if-elseif-else syntax,
+The if-else syntax:
 
 ```{julia}
 #| eval: false
@@ -342,7 +341,7 @@ Or, better... Ternary operators:
 x ? "great" : "boo"
 ```
 
-## Macros 
+## Macros
 
 (metaprogrmming: code that transforms code)
 
@@ -350,9 +349,33 @@ x ? "great" : "boo"
 @time f(10^6)
 ```
 
-## Fine-grain debugging[^2]
+------------------------------------------------------------------------
 
-[^2]: This example was taken from [What\'s great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
+Here is an example of how to create one[^2]
+
+[^2]: Taken from Patrick's [blog post](https://www.paltmeyer.com/blog/posts/meta-programming/#macros)
+
+```{julia}
+#| label: macro-creation
+#| include: true
+#| echo: true
+macro sayhello(name)
+    return :( println("Hello, ", $name) )
+end
+```
+
+. . .
+
+```{julia}
+#| label: macro-execution
+#| include: true
+#| echo: true
+@sayhello "reader"                          
+```
+
+## Fine-grain debugging[^3]
+
+[^3]: This example was taken from [What's great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
 
 Return Julia's intermediate representation (IR) of the function:
 
@@ -384,9 +407,9 @@ Show the native assembly function code
 @code_native
 ```
 
-## Out-of-the-box parallelism[^3]
+## Out-of-the-box parallelism[^4]
 
-[^3]: Taken from [What's great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
+[^4]: Taken from [What's great about Julia](https://viralinstruction.com/posts/goodjulia/#its_both_fast_and_dynamic) from [Jakob Nybo](https://github.com/jakobnissen)
 
 ```{julia}
 #| echo: true
