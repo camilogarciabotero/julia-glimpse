@@ -481,7 +481,7 @@ Camilo García-Botero <a href="https://orcid.org/0000-0002-0426-7007" class="qua
 </section></section><section><section id="oh-my-beautiful-syntax" class="title-slide slide level1 center"><h1>Oh my Beautiful syntax</h1>
 
 </section><section class="slide level2 center"><p>Unicode support and nice operators<sup>1</sup>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">neural_network</span>(x, 𝐕, 𝐰, <span class="cn">φ</span>, g) <span class="op">=</span> 𝐰 <span class="op">⋅</span> <span class="fu">map</span>(𝐯ⱼ <span class="op">-&gt;</span> <span class="fu">g</span>(𝐯ⱼ <span class="op">⋅</span> <span class="fu">φ</span>(x)), 𝐕)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">neuralnetwork</span>(x, 𝐕, 𝐰, <span class="cn">φ</span>, g) <span class="op">=</span> 𝐰 <span class="op">⋅</span> <span class="fu">map</span>(𝐯ⱼ <span class="op">-&gt;</span> <span class="fu">g</span>(𝐯ⱼ <span class="op">⋅</span> <span class="fu">φ</span>(x)), 𝐕)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>From the <a href="https://github.com/mossr/BeautifulAlgorithms.jl/blob/master/src/neural_network_one_liner.jl">Beautiful Algorithms</a> project</p></li></ol></aside></section><section class="slide level2 center"><div class="columns">
 <div class="column" style="width:50%;">
 <p>R:</p>
@@ -619,8 +619,8 @@ version = "0.1.2"</code></pre>
 </div>
 </section></section><section><section id="a-feature-rich-language" class="title-slide slide level1 center"><h1>A Feature Rich Language</h1>
 
-</section><section id="some-random-features" class="slide level2 center"><h2>Some Random features</h2>
-<p>The if-elseif-else syntax,</p>
+</section><section id="ternary-operators" class="slide level2 center"><h2>Ternary operators</h2>
+<p>The if-else syntax:</p>
 <div class="cell" data-hash="julia-glimpse_cache/revealjs/unnamed-chunk-8_d6d972dccf041e6a4dfc46fb63683735">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> <span class="cn">true</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"great"</span></span>
